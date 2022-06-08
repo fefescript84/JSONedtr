@@ -51,27 +51,28 @@ $(document).ready(function(){
                 console.log('JSONedtr', editor.getDataString());
                 //console.log('JSONedtr', editor.getData());
             },
-            instantChange: true,
-            readOnly: false, //Edit function disabled
-            outputIsHumanReadable: false,
-            labelSave: 'Mentés',
-            labelCancel: 'Mégsem',
-            labelKey: 'kulcs',
-            labelValue: 'érték',
-            labelDefault: 'Alapállás',
-            labelClearAll: 'Mind töröl',
-            labelCopyToCB: 'Másolás',
-            labelPasteFromCB: 'Beillesztés',
-            label_type_string: 'Szöveg',
-            label_type_number: 'Szám',
-            label_type_boolean: 'Igaz/Hamis',
-            label_type_array: 'Tömb',
-            label_type_object: 'Objektum',
-            arrayAdditionDisabled: false,
-            objectAdditionDisabled: false,
-            templateDark: false,
-            keyInputClasses: null,
-            valueInputClasses: null
+            instantChange: true, /* True: call runFunctionOnUpdate on INPUT && CHANGE event, False: call runFunctionOnUpdate on CHANGE event */
+            runFunctionOnUpdate: null, /* call on update, type: (string || function) */
+            readOnly: false, //true: Edit function disabled
+            outputIsHumanReadable: false, /* true: JSON output is human readable, false: JSON is in 1 line */
+            labelSave: 'Save',
+            labelCancel: 'Cancel',
+            labelKey: 'key',
+            labelValue: 'value',
+            labelDefault: 'Default',
+            labelClearAll: 'Clear all',
+            labelCopyToCB: 'Copy',
+            labelPasteFromCB: 'Paste',
+            label_type_string: 'String',
+            label_type_number: 'Number',
+            label_type_boolean: 'Boolean',
+            label_type_array: 'Array',
+            label_type_object: 'Object',
+            arrayAdditionDisabled: false, /* True: Can't add new Array */
+            objectAdditionDisabled: false, /* True: Can't add new Object */
+            templateDark: false, /* true: dark template, false: light template */
+            keyInputClasses: null, /* extra classes to be added to: input.jse--key */
+            valueInputClasses: null /* extra classes to be added to: input.jse--value */
         }
 	);
 });
