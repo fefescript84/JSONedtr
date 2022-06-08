@@ -6,7 +6,7 @@ jQuery powered JSON editor for basic JSON editing on your web project.
 - support readonly & edit mode
 - copy to clipboard (human readable JSON format string)
 - paste from clipboard (JSON format string)
-- responsive minimal design with ligt & dark template
+- responsive minimal design with light & dark template
 
 
 ## Table of Contents
