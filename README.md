@@ -1,6 +1,13 @@
 # JSONedtr
 
-jQuery powered JSON editor for basic JSON editing on your web project
+jQuery powered JSON editor for basic JSON editing on your web project.
+- supported types: number, string, boolean, array, object
+- different colors of types
+- support readonly & edit mode
+- copy to clipboard (human readable JSON format string)
+- paste from clipboard (JSON format string)
+- responsive minimal design with ligt & dark template
+
 
 ## Table of Contents
 
