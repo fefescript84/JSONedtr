@@ -29,14 +29,44 @@ Just include `src/JSONedtr.css` and `src/JSONedtr.js` in your project after jQue
 
 ##### Create element for the editor
 ```html
-<div id="output"></div>
+<div id="id-of-element"></div>
 ```
 
 ##### Initialize editor with your data
 ```js
 $(document).ready(function(){
-	var data = '{"first_key":"one","second_key":"two","third_key":{"one":"item 3-1","two":"item 3-2","three":"item 3-3"}}';
-	new JSONedtr( data, '#output' );
+	var editor = new JSONedtr(
+        '{"Number":1,"Array":[1,2,3,"four"],"Object":{"aa":11,"bb":22.22},"String":"Hello World!","Boolean":true}',
+        '#id-of-element', 
+        {
+            runFunctionOnUpdate: function (editor) {
+                //console.log('JSONedtr', editor);
+                console.log('JSONedtr', editor.getDataString());
+                //console.log('JSONedtr', editor.getData());
+            },
+            instantChange: true,
+            readOnly: false, //Edit function disabled
+            outputIsHumanReadable: false,
+            labelSave: 'Mentés',
+            labelCancel: 'Mégsem',
+            labelKey: 'kulcs',
+            labelValue: 'érték',
+            labelDefault: 'Alapállás',
+            labelClearAll: 'Mind töröl',
+            labelCopyToCB: 'Másolás',
+            labelPasteFromCB: 'Beillesztés',
+            label_type_string: 'Szöveg',
+            label_type_number: 'Szám',
+            label_type_boolean: 'Igaz/Hamis',
+            label_type_array: 'Tömb',
+            label_type_object: 'Objektum',
+            arrayAdditionDisabled: false,
+            objectAdditionDisabled: false,
+            templateDark: false,
+            keyInputClasses: null,
+            valueInputClasses: null
+        }
+	);
 });
 ```
 
@@ -85,11 +115,8 @@ $(document).ready(function(){
 See provided example files and their code for more information
 
 ## TODO
-* better support for array data type (currently can be opened but is saved as object)
-* better support for number number type (currently can be opened but is saved as string)
 * add support to reference type
 * use SASS
-* ~~dark theme~~ DONE
 * minify code for production
 
 ## Support
